@@ -80,7 +80,7 @@ export default function DeleteScreen() {
     const formData = new FormData(event.currentTarget);
 
     //console.log(id);
-    //test
+    //test again
 
     const usr = formData.get('usr');
     const pwd = formData.get('pwd');

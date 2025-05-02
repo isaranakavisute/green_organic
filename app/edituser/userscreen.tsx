@@ -61,7 +61,7 @@ export default function DeleteScreen() {
        set_user_from_initialzer_status(std_json_res.user_search.result[0].email);
        set_password_from_initializer_status(std_json_res.user_search.result[0].password);
        set_access_from_initializer_status(std_json_res.user_search.result[0].access_type);
-       set_access_from_initializer_status(std_json_res.user_search.result[0].user_id);
+       set_id_from_initialzer_status(std_json_res.user_search.result[0].user_id);
       }
       else
       {
@@ -186,7 +186,7 @@ export default function DeleteScreen() {
             <div className="flex flex-row w-full h-[5vh] border-0 border-solid border-black items-center justify-center mb-10 bg-white">
              <div className="h-full w-full border-1 border-solid border-black ml-5 mr-5">
               <select name="access" className="h-full w-full border-0 border-solid border-yellow text-black" >
-               <option value="Please select access type">Please select access type</option>
+               <option value="Please select access type">Please select access type</option> 
                <option value="Tsubakimoto" selected={(access_from_initializer == "Tsubakimoto") ? true : false}  >Tsubakimoto</option>
                <option value="KTE"  selected={(access_from_initializer == "KTE") ? true : false}>KTE</option>
                <option value="Agency" selected={(access_from_initializer == "Agency") ? true : false}>Agency</option>

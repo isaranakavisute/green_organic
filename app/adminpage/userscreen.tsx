@@ -75,7 +75,7 @@ export default function UserScreen() {
               std_json_res.map((post) => (
                  
            
-
+                  //fix this
 
                   <div className="flex flex-row w-full h-[3vh] bg-amber-100" key={post.user_id}>
                    <div className="border-1 border-solid border-black w-1/5 h-full text-xl text-black">{post.user_id}</div>

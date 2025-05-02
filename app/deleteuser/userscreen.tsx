@@ -57,9 +57,9 @@ export default function DeleteScreen() {
        //alert('user found');
        console.log(res.data);
        //set_deletion_status("User:"+usr + " is now deleted.");
-       set_user_from_initialzer_status(std_json_res.user_search.result[0].usr);
-       set_password_from_initializer_status(std_json_res.user_search.result[0].pwd);
-       set_access_from_initializer_status(std_json_res.user_search.result[0].access);
+       set_user_from_initialzer_status(std_json_res.user_search.result[0].email);
+       set_password_from_initializer_status(std_json_res.user_search.result[0].password);
+       set_access_from_initializer_status(std_json_res.user_search.result[0].access_type);
       }
       else
       {

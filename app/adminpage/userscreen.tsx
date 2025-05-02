@@ -17,7 +17,7 @@ import trash_icon from "./images/recycle-bin-icon.svg";
 export default function UserScreen() {
 
   const router = useRouter;
-  const [std_json_res, set_std_json_res] = React.useState([{"Id": "value","usr": "value","pwd": "value","access": "value"}]); //React.useState(null);
+  const [std_json_res, set_std_json_res] = React.useState([{"user_id": "value","email": "value","password": "value","access_type": "value"}]); //React.useState(null);
  
 
   function autoload()
@@ -74,11 +74,14 @@ export default function UserScreen() {
              {
               std_json_res.map((post) => (
                  
-                  <div className="flex flex-row w-full h-[3vh] bg-amber-100" key={post.Id}>
-                   <div className="border-1 border-solid border-black w-1/5 h-full text-xl text-black">{post.Id}</div>
-                   <div className="border-1 border-solid border-black w-1/5 h-full text-xl text-black">{post.usr}</div>
-                   <div className="border-1 border-solid border-black w-1/5 h-full text-xl text-black">{post.pwd}</div>
-                   <div className="border-1 border-solid border-black w-1/5 h-full text-xl text-black">{post.access}</div>
+           
+
+
+                  <div className="flex flex-row w-full h-[3vh] bg-amber-100" key={post.user_id}>
+                   <div className="border-1 border-solid border-black w-1/5 h-full text-xl text-black">{post.user_id}</div>
+                   <div className="border-1 border-solid border-black w-1/5 h-full text-xl text-black">{post.email}</div>
+                   <div className="border-1 border-solid border-black w-1/5 h-full text-xl text-black">{post.password}</div>
+                   <div className="border-1 border-solid border-black w-1/5 h-full text-xl text-black">{post.access_type}</div>
                    <div className="border-1 border-solid border-black w-1/5 h-full flex flex-row">
          
                     
@@ -92,7 +95,7 @@ export default function UserScreen() {
                       height: "75%",
                       }}
                      >
-                      <Link href={"/edituser?id="+post.Id}  onClick={onEditIconClicked}>                       
+                      <Link href={"/edituser?id="+post.user_id}  onClick={onEditIconClicked}>                       
                         <Image
                          src={pencil_icon}
                          alt="pencil icon"
@@ -111,7 +114,7 @@ export default function UserScreen() {
                       height: "75%",
                       }}
                      >
-                      <Link href={"/deleteuser?id="+post.Id} onClick={onDeleteIconClicked}>
+                      <Link href={"/deleteuser?id="+post.user_id} onClick={onDeleteIconClicked}>
                        <Image
                         src={trash_icon}
                         alt="trash icon"

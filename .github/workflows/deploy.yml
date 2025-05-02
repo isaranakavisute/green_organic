@@ -1,0 +1,39 @@
+name: Deployment Workflow
+on:
+  push:
+    branches:
+      - production
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    #runs-on: self-hosted
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Add SSH private key to agent
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.PEM_CONTENT }}  # Ensure this secret contains the new private key
+
+      - name: Deploy
+        run: |
+          ssh -o StrictHostKeyChecking=no ubuntu@deploy-aws.com "
+          sudo rm -r deploy_dir
+          mkdir deploy_dir
+          cd deploy_dir
+          git clone https://isara40618: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@github.com/isaranakavisute/tsubakimoto_frontend_admin.git 
+          cd tsubakimoto_frontend_admin
+          git checkout production
+          git fetch
+          git pull
+          sudo docker stop tsubakimoto_frontend_admin
+          sudo docker rm tsubakimoto_frontend_admin
+          sudo docker rmi isara40618/tsubakimoto_frontend_admin
+          sudo docker build -t isara40618/tsubakimoto_frontend_admin .
+          sudo docker push isara40618/tsubakimoto_frontend_admin
+          sudo docker run --name=tsubakimoto_frontend_admin --net=host --restart on-failure -d isara40618/tsubakimoto_frontend_admin
+          "

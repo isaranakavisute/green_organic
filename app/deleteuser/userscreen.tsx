@@ -102,6 +102,7 @@ export default function DeleteScreen() {
    })
    .then(res => {
     var std_json_res = res.data;
+    console.log(res.data);
     if (std_json_res.deletion.result=="pass")
      {
       //alert('user deleted');

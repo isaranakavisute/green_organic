@@ -105,7 +105,7 @@ export default function DeleteScreen() {
     if (std_json_res.deletion.result=="pass")
      {
       //alert('user deleted');
-      set_deletion_status("User:"+usr + " is now deleted.");
+      set_deletion_status("User ID:"+id + " is now deleted.");
      }
     })
     .catch(err => {

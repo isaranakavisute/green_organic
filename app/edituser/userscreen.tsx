@@ -19,7 +19,8 @@ export default function DeleteScreen() {
   //const router = useRouter;
 
   const [editing_status, set_editing_status] = React.useState("user is not edited");  
-  const [user_from_initialzer, set_user_from_initialzer_status] = React.useState("not initialized");  
+  const [user_from_initialzer, set_user_from_initialzer_status] = React.useState("not initialized");
+  const [id_from_initialzer, set_id_from_initialzer_status] = React.useState("not initialized");  
   const [password_from_initializer, set_password_from_initializer_status] = React.useState("");  
   const [access_from_initializer, set_access_from_initializer_status] = React.useState("Please select access type");  
 
@@ -60,6 +61,7 @@ export default function DeleteScreen() {
        set_user_from_initialzer_status(std_json_res.user_search.result[0].email);
        set_password_from_initializer_status(std_json_res.user_search.result[0].password);
        set_access_from_initializer_status(std_json_res.user_search.result[0].access_type);
+       set_access_from_initializer_status(std_json_res.user_search.result[0].user_id);
       }
       else
       {
@@ -82,6 +84,9 @@ export default function DeleteScreen() {
     const usr = formData.get('usr');
     const pwd = formData.get('pwd');
     const access = formData.get('access');
+    const id = formData.get('id');
+
+    //const id = formData.get('id');
 
 
 
@@ -92,6 +97,7 @@ export default function DeleteScreen() {
       "Content-Type": "application/json"
      },
      data: {
+      id: id,
       usr: usr,
       pwd: pwd,
       access: access
@@ -139,6 +145,14 @@ export default function DeleteScreen() {
               </div>
             <div className="flex flex-row w-full h-[5vh] border-0 border-solid border-black items-center justify-center mb-15 mt-10">
              <div className="text-3xl text-black">This is a user editing screen</div>
+            </div>
+            <div className="flex flex-row w-full h-[5vh] border-0 border-solid border-black items-center justify-start mb-10">
+             <div className="text-3xl h-full w-1/4 border-0 border-solid border-black flex flex-col justify-center ml-5 mr-5">
+              <div className="text-3xl text-black">ID</div>
+             </div>
+             <div className="h-full w-3/4 border-0 border-solid border-black flex flex-row justify-start items-center">
+              <input type="text" name="id" className="h-full w-full border border-solid border-black text-2xl cursor-wait mr-5 text-black" value={id_from_initialzer} />
+             </div>
             </div>
             <div className="flex flex-row w-full h-[5vh] border-0 border-solid border-black items-center justify-start mb-10">
              <div className="text-3xl h-full w-1/4 border-0 border-solid border-black flex flex-col justify-center ml-5 mr-5">

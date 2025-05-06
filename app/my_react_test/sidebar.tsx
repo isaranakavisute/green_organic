@@ -6,8 +6,6 @@ import React, { useState, useMemo } from "react";
 
 const menuItems = [
   { id: 1, label: "Home", link: "/adminpage" },
-  { id: 2, label: "Upload File(s)", link: "/upload_file" },
-  { id: 3, label: "my_react_test", link: "/my_react_test" }
 ];
 
 const Sidebar = () => {
@@ -22,7 +20,7 @@ const Sidebar = () => {
         {   
            menuItems.map((menu) => (
                   <div className="flex flex-row w-full justify-center items-center bg-green-200" key={menu.label}>
-                   <div className="border-1 border-solid border-black w-full bg-amber-600 pl-2"><Link href={menu.link}>{menu.label}</Link></div>
+                   <div className="border-1 border-solid border-black w-full bg-amber-600 pl-2"><Link href="/adminpage">{menu.label}</Link></div>
                   </div>
                )
               )

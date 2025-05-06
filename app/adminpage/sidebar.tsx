@@ -6,7 +6,8 @@ import React, { useState, useMemo } from "react";
 
 const menuItems = [
   { id: 1, label: "Home", link: "/adminpage" },
-  { id: 2, label: "Upload File(s)", link: "/upload_file" }
+  { id: 2, label: "Upload File(s)", link: "/upload_file" },
+  // { id: 3, label: "Upload File(s)", link: "/my_test1" }
 ];
 
 const Sidebar = () => {

@@ -5,9 +5,10 @@ import { useRouter } from "next/router";
 import React, { useState, useMemo } from "react";
 
 const menuItems = [
-  { id: 1, label: "Home", link: "/adminpage" },
-  { id: 2, label: "Upload File(s)", link: "/upload_file" },
-  { id: 3, label: "my_react_test", link: "/my_react_test" }
+  { id: 1, label: "Home", link: "/" },
+  { id: 2, label: "Show User", link: "/po" },
+  { id: 3, label: "Add User", link: "/users" },
+  { id: 4, label: "Edit User", link: "/tutorials" },
 ];
 
 const Sidebar = () => {
@@ -17,12 +18,12 @@ const Sidebar = () => {
   return (
         <div className="flex flex-col items-center justify-start w-full">          
            <div className="flex flex-row w-full justify-center items-center bg-green-200 mb-10">
-            <div className="border-1 border-solid border-black w-full bg-amber-600 flex flex-row justify-center items-center">ADMIN MENU</div>
+            <div className="border-1 border-solid border-black w-full bg-yellow100 flex flex-row justify-center items-center">ADMIN MENU</div>
            </div>
         {   
            menuItems.map((menu) => (
                   <div className="flex flex-row w-full justify-center items-center bg-green-200" key={menu.label}>
-                   <div className="border-1 border-solid border-black w-full bg-amber-600 pl-2"><Link href={menu.link}>{menu.label}</Link></div>
+                   <div className="border-1 border-solid border-black w-full bg-green-300">{menu.label}</div>
                   </div>
                )
               )

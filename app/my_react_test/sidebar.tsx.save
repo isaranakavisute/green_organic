@@ -1,0 +1,83 @@
+'use client';
+
+//import classNames from "classnames";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import React, { useState, useMemo } from "react";
+//import {
+  //ArticleIcon,
+  //CollapsIcon,
+  //HomeIcon,
+  //LogoIcon,
+  //LogoutIcon,
+  //UsersIcon,
+  //VideosIcon,
+//} from "./icons";
+
+const menuItems = [
+  { id: 1, label: "Home", link: "/" },
+  { id: 2, label: "Manage Posts", link: "/posts" },
+  { id: 3, label: "Manage Users", link: "/users" },
+  { id: 4, label: "Manage Tutorials", link: "/tutorials" },
+];
+
+const Sidebar = () => {
+  const router = useRouter();
+  return (
+    
+      <div className="flex flex-col">
+        <div className="flex items-center justify-between relative">
+          <div className="flex items-center pl-1 gap-4">
+            <LogoIcon />
+            <span
+              className={classNames("mt-2 text-lg font-medium text-text", {
+                hidden: toggleCollapse,
+              })}
+            >
+              Logo
+            </span>
+          </div>
+          {is
+
+        <div className="flex flex-col items-start mt-24">
+          {menuItems.map(({ icon: Icon, ...menu }) => {
+            const classes = getNavItemClasses(menu);
+            return (
+              <div className={classes}>
+                <Link href={menu.link}>
+                  <a className="flex py-4 px-3 items-center w-full h-full">
+                    <div style={{ width: "2.5rem" }}>
+                      <Icon />
+                    </div>
+                    {!toggleCollapse && (
+                      <span
+                        className={classNames(
+                          "text-md font-medium text-text-light"
+                        )}
+                      >
+                        {menu.label}
+                      </span>
+                    )}
+                  </a>
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className={`${getNavItemClasses({})} px-3 py-4`}>
+        <div style={{ width: "2.5rem" }}>
+          <LogoutIcon />
+        </div>
+        {!toggleCollapse && (
+          <span className={classNames("text-md font-medium text-text-light")}>
+            Logout
+          </span>
+        )}
+      </div>
+    
+  );
+};
+
+export default Sidebar;

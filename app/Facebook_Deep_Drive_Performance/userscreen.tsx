@@ -21,6 +21,7 @@ import { Chart, LinearScale, CategoryScale, LineController, LineElement, PointEl
 Chart.register(LinearScale, CategoryScale, LineController, LineElement, PointElement);
 import { Line } from "react-chartjs-2";
 //import Chart from 'chart.js/auto';
+import type { ChartData } from 'chart.js';
 
 export default function UserScreen() {
 
@@ -102,6 +103,56 @@ export default function UserScreen() {
             },
         ],
     };
+
+    const data3: ChartData<"line", number[], string> = {
+         labels: ['Oct 1', 'Oct 3', 'Oct 7', 'Oct 9', 'Oct 11', 'Oct 13', 'Oct 17', 'Oct 21', 'Oct 25', 'Oct 27', 'Oct 29', 'Oct 31','Sep 1', ' Sep 3', 'Sep 5', 'Sep 7', 'Sep 9', 'Sep 11', 'Sep 13', 'Sep 15', 'Sep 17', 'Sep 19', 'Sep 21', 'Sep 23', 'Sep 25', 'Sep 27', 'Sep 29'],
+         datasets: [
+           {
+                    label: 'My First dataset',
+                    fill: false,
+                    //lineTension: 0.1,
+                    backgroundColor: 'rgba(75,192,192,0.4)',
+                    borderColor: 'rgba(75,192,192,1)',
+                    borderCapStyle: 'butt',
+                    borderDash: [],
+                    borderDashOffset: 0.0,
+                    borderJoinStyle: 'miter',
+                    pointBorderColor: 'rgba(75,192,192,1)',
+                    pointBackgroundColor: '#fff',
+                    pointBorderWidth: 1,
+                    pointHoverRadius: 5,
+                    pointHoverBackgroundColor: 'rgba(75,192,192,1)',
+                    pointHoverBorderColor: 'rgba(220,220,220,1)',
+                    pointHoverBorderWidth: 2,
+                    pointRadius: 1,
+                    pointHitRadius: 10,
+                    data: [0.2, 0.5, 0.3, 0.7, 0.4, 0.2, 0.5, 0.3, 0.4, 0.2, 0.5, 0.3,0.4, 0.2, 0.5, 0.3, 0.4, 0.1, 0.3, 0.5 , 0.7, 0.2, 0.3, 0.5, 0.7, 0.9, 0.2],
+                    //data: [{0.2, 0.5, 0.3, 0.7, 0.4, 0.2, 0.5, 0.3, 0.4, 0.2, 0.5, 0.3},{1.2, 1.5, 1.3, 1.7, 1.4, 1.2, 1.5, 1.3, 1.4, 1.2, 1.5, 1.3}],
+                },
+                {
+                    label: 'My Second dataset',
+                    fill: false,
+                    //lineTension: 0.1,
+                    backgroundColor: 'rgba(75,192,192,0.4)',
+                    borderColor: 'rgba(75,192,192,1)',
+                    borderCapStyle: 'butt',
+                    borderDash: [],
+                    borderDashOffset: 0.0,
+                    borderJoinStyle: 'miter',
+                    pointBorderColor: 'rgba(75,192,192,1)',
+                    pointBackgroundColor: '#fff',
+                    pointBorderWidth: 1,
+                    pointHoverRadius: 5,
+                    pointHoverBackgroundColor: 'rgba(75,192,192,1)',
+                    pointHoverBorderColor: 'rgba(220,220,220,1)',
+                    pointHoverBorderWidth: 2,
+                    pointRadius: 1,
+                    pointHitRadius: 10,
+                    data: [2.2, 2.5, 4.3, 2.7, 2.4, 1.2, 2.5, 2.3, 5.4, 2.2, 1.5, 2.3,2.4,3.2,2.5,3.3,2.4, 1.2, 2.5, 1.3, 4.4, 1.1, 3.1, 5.2, 4.2, 2.4, 2.2],
+                    //data: [{0.2, 0.5, 0.3, 0.7, 0.4, 0.2, 0.5, 0.3, 0.4, 0.2, 0.5, 0.3},{1.2, 1.5, 1.3, 1.7, 1.4, 1.2, 1.5, 1.3, 1.4, 1.2, 1.5, 1.3}],
+                },
+         ],
+        };
 
     const options = {
         scales: {
@@ -244,7 +295,7 @@ export default function UserScreen() {
             <div className="flex flex-row h-[40vh] w-full bg-white pb-2 pt-2 pl-2 pr-2 items-center justify-center">
               {/* <div className="flex flex-row h-full w-full bg-white justify-center items-center"> */}
                 {/* <Line data={data1} options={options} /> */}
-                <Line data={data2} options={options} />
+                <Line data={data3} options={options} />
               {/* </div> */}
             </div>
             <div className="flex flex-row h-[30vh] w-full pb-2 pt-2 pl-2 pr-2  bg-gray-300">

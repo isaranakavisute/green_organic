@@ -242,10 +242,10 @@ export default function UserScreen() {
              </div>
             </div>
             <div className="flex flex-row h-[40vh] w-full bg-white pb-2 pt-2 pl-2 pr-2 items-center justify-center">
-              {/* <div className="flex flex-row h-full w-full bg-white justify-center items-center"> */}
+              <div className="flex flex-row h-full w-full bg-white justify-center items-center">
                 {/* <Line data={data1} options={options} /> */}
-                {/* <Line data={data2} options={options} /> */}
-              {/* </div> */}
+                <Line data={data2} options={options}></Line>
+              </div>
             </div>
             <div className="flex flex-row h-[30vh] w-full pb-2 pt-2 pl-2 pr-2  bg-gray-300">
               <div className="flex flex-col h-full w-full bg-white mr-2 justify-start items-start">
